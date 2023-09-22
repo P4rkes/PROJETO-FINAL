@@ -34,3 +34,7 @@ O usuário escolherá o que quer editar e irá substituir o conteúdo pelo desej
 O usuário poderá deletar sua reserva com a opção 4 (deletar reserva), o sistema perguntará qual reserva você quer deletar, o usuário escolhe qual (0, 1, 2, 3 ...)
 
 O usuário poderá sair do sistema com a opção 5 (sair)
+
+#### autores
+- Lucas prestes Vargas - P4rkes
+- Kauê Prestes Vargas - Newew44
