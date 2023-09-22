@@ -1,102 +1,99 @@
 // /****************************
 // *ESTRUTURA BASE PARA UM MENU*
 // *****************************/
- const reservas = [];
+const reservas = [];
 
- function reserva() {
-   // Implementar criação de reserva
-   let nome = prompt("Digite um nome");
-   let data = prompt("Digite uma data");
-   let sala = prompt("Digite uma sala")
-   let horario = prompt("Digite um horario");
-   let finalidade = prompt("Qual a finalidade?")
+function reserva() {
+  // Implementar criação de reserva
+  let nome = prompt("Digite um nome");
+  let data = prompt("Digite uma data");
+  let sala = prompt("Digite uma sala")
+  let horario = prompt("Digite um horario");
+  let finalidade = prompt("Qual a finalidade?")
 
-   const reserva = {
-     nome,
-     data,
-     horario,
-     sala,
-     finalidade,
-   };
+  const reserva = {
+    nome,
+    data,
+    horario,
+    sala,
+    finalidade,
+  };
 
-   reservas.push(reserva);
-   console.log("Reserva criada com sucesso");
- }
+  reservas.push(reserva);
+  console.log("Reserva criada com sucesso");
+  exibirMenu()
+}
 
- function visualizarReservas() {
-   // Implementar visualização de reservas
- console.log("lista de reservas:");
- for (let reserva of reservas) {
-     console.log("nome:", reserva.nome, ",", "data:", reserva.data, "horario:", reserva.horario, "sala:", reserva.sala, "finalidade:", reserva.finalidade);
- }
- }
+function visualizarReservas() {
+  // Implementar visualização de reservas
+console.log("lista de reservas:");
+for (let reserva of reservas) {
+    console.log("nome:", reserva.nome, ",", "data:", reserva.data, "horario:", reserva.horario, "sala:", reserva.sala, "finalidade:", reserva.finalidade);
+}
+exibirMenu()
+}
 
- function editarReserva() {
-   // Implementar edição de reserva
-   let indice = prompt("Digite o indice da reserva que deseja editar:");
-   if (indice >= 0 && indice < reservas.length) {
-     let info = prompt("qual informação deseja editar? - nome, data, horario, sala, finalidade");
-     let novaInfo = prompt("digite a nova informacao para:", info);
+function editarReserva() {
+  // Implementar edição de reserva
+  let indice = prompt("Digite o indice da reserva que deseja editar:");
+  if (indice >= 0 && indice < reservas.length) {
+    let info = prompt("qual informação deseja editar? - nome, data, horario, sala, finalidade");
+    let novaInfo = prompt("digite a nova informacao para:", info);
 
-     reservas[indice][info] = novaInfo;
-     console.log("reserva editada!");
-   } else {
-     console.log("não foi possivel editar a reserva! Tente novamente");
-   }
- }
+    reservas[indice][info] = novaInfo;
+    console.log("reserva editada!");
+  } else {
+    console.log("não foi possivel editar a reserva! Tente novamente");
+  }
+  exibirMenu()
+}
 
- function deletarReserva() {
-   // Implementar exclusão de reserva
-   let indice = prompt("Digite qual reserva deseja deletar:");
-   if (indice >= 0 && indice < reservas.length) {
-     reservas.splice(indice, 1);
-     console.log("reserva deletada!")
-   } else {
-     console.log("não foi possivel deletar a reserva! Tente novamente");
-   }
- }
+function deletarReserva() {
+  // Implementar exclusão de reserva
+  let indice = prompt("Digite qual reserva deseja deletar:");
+  if (indice >= 0 && indice < reservas.length) {
+    reservas.splice(indice, 1);
+    console.log("reserva deletada!")
+  } else {
+    console.log("não foi possivel deletar a reserva! Tente novamente");
+  }
+  exibirMenu()
+}
 
- function exibirMenu() {
-   console.log("Menu:");
-   console.log("1. Criar Reserva");
-   console.log("2. Visualizar Reservas");
-   console.log("3. Editar Reserva");
-   console.log("4. Deletar Reserva");
-   console.log("5. Sair");
-   const opcao = prompt("Digite o número da opção desejada:");
+function exibirMenu() {
+  console.log("Menu:");
+  console.log("1. Criar Reserva");
+  console.log("2. Visualizar Reservas");
+  console.log("3. Editar Reserva");
+  console.log("4. Deletar Reserva");
+  console.log("5. Sair");
+  const opcao = prompt("Digite o número da opção desejada:");
 
-   switch (opcao) {
-     case "1":
-       // Chamar função de criar reserva
-       reserva();
-       break;
-     case "2":
-       // Chamar função de visualizar reservas
-       visualizarReservas();
-       break;
-     case "3":
-       // Chamar função de editar reserva
-       editarReserva();
-       break;
-     case "4":
-       // Chamar função de deletar reserva
-       deletarReserva();
-       break;
-     case "5":
-       console.log("Saindo do programa. Até logo!");
-       return;
-     default:
-       console.log("Opção inválida. Tente novamente.");
-   }
+  switch (opcao) {
+    case "1":
+      // Chamar função de criar reserva
+      reserva();
+      break;
+    case "2":
+      // Chamar função de visualizar reservas
+      visualizarReservas();
+      break;
+    case "3":
+      // Chamar função de editar reserva
+      editarReserva();
+      break;
+    case "4":
+      // Chamar função de deletar reserva
+      deletarReserva();
+      break;
+    case "5":
+      console.log("Saindo do programa. Até logo!");
+      return;
+    default:
+      console.log("Opção inválida. Tente novamente.");
+  }
 
-   // Chamar função de exibir menu novamente
- }
+  // Chamar função de exibir menu novamente
+}
 
- exibirMenu();
-
-//  MANUAL:
-//  O sistema irá exibir um menubar, este menu tera 5 funções.
-//  O usuario escolherá a funcao de criar uma reserva, que ira ficar guardada como ( 0 ).
-//  caso o usuario quiser editar a reserva, ele tera que poro indice da sua reserva inicial ( 0 )
-//  e escolher o que quer editar, apos editar a reserva, o usuario podera deletar a reserva com o indice ( 0 )
-//  ou apenas sair do programa!
+exibirMenu();
