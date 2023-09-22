@@ -25,4 +25,12 @@ O usuário pode vizualizar as reservas com a opção 2 (viz. reservas), o result
 - Lista de reservas:
 - (conteúdo salvo de reservas)
 
-O usuário pode editar sua reserva com a opção 3 (Editar Reserva), o sistema perguntará
+O usuário pode editar sua reserva com a opção 3 (Editar Reserva), o sistema perguntará:
+- o indice da reserva que deseja editar ( 0 )
+- qual informação deseja editar? - nome, data, horario, sala, finalidade
+
+O usuário escolherá o que quer editar e irá substituir o conteúdo pelo desejado.
+
+O usuário poderá deletar sua reserva com a opção 4 (deletar reserva), o sistema perguntará qual reserva você quer deletar, o usuário escolhe qual (0, 1, 2, 3 ...)
+
+O usuário poderá sair do sistema com a opção 5 (sair)
